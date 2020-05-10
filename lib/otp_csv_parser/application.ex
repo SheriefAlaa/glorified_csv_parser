@@ -11,13 +11,10 @@ defmodule OtpCsvParser.Application do
       # Start the Ecto repository
       OtpCsvParser.Repo,
       # Start the endpoint when the application starts
-      OtpCsvParserWeb.Endpoint
-      # Starts a worker by calling: OtpCsvParser.Worker.start_link(arg)
-      # {OtpCsvParser.Worker, arg},
+      OtpCsvParserWeb.Endpoint,
+      {Absinthe.Subscription, [OtpCsvParserWeb.Endpoint]},
     ]
 
-    # See https://hexdocs.pm/elixir/Supervisor.html
-    # for other strategies and supported options
     opts = [strategy: :one_for_one, name: OtpCsvParser.Supervisor]
     Supervisor.start_link(children, opts)
   end

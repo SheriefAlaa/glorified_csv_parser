@@ -1,6 +1,9 @@
 defmodule OtpCsvParserWeb.UserSocket do
   use Phoenix.Socket
 
+  use Absinthe.Phoenix.Socket,
+    schema: OtpCsvParserWeb.Api.Schema
+
   ## Channels
   # channel "room:*", OtpCsvParserWeb.RoomChannel
 

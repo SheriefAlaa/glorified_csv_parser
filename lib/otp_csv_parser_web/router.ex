@@ -23,4 +23,13 @@ defmodule OtpCsvParserWeb.Router do
   # scope "/api", OtpCsvParserWeb do
   #   pipe_through :api
   # end
+
+  scope "/" do
+    pipe_through :api
+
+    forward "/graphiql", Absinthe.Plug.GraphiQL,
+      schema: OtpCsvParserWeb.Api.Schema,
+      interface: :simple,
+      context: %{pubsub: OtpCsvParserWeb.Endpoint}
+  end
 end
