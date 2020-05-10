@@ -4,22 +4,22 @@
 
 ## Model
 
-- We should have two modules `Product` and `Category`.
-- Each product should have multiple categories.
+- We should have two modules `Product` and `Category`. D
+- Each product should have multiple categories. D
 
 ### Products fields
 
-- name (Arabic)
-- name (English)
-- description (Arabic)
-- description (English)
-- price
-- listed (boolean)
+- name (Arabic) D
+- name (English) D
+- description (Arabic) D
+- description (English) D
+- price D
+- listed (boolean) D
 
 ### Category fields
 
-- name (Arabic)
-- name (English)
+- name (Arabic) D
+- name (English) D
 
 ## Requirement
 
@@ -27,13 +27,13 @@
 
 - Creates a new DB record if it was a new.
 - Updated a previous one
-- Validates uniqueness of name
+- Validates uniqueness of name D
 - Validates required information
-  - name is required
-  - description is not required
-  - price is required and must be greater than 0
-  - listed is not required but it has a default value of true
-- Add multiple categories to the product
+  - name is required D
+  - description is not required D
+  - price is required and must be greater than 0 D
+  - listed is not required but it has a default value of true D
+- Add multiple categories to the product D
 
 ### User Expectation
 
@@ -46,5 +46,5 @@
 
 - User can access the process information for a 1 hour after the process is finished
 - After 1 hour all data should be removed
-- After downloading the failure result, the used should not be able to download it aging
+- After downloading the failure result, the user should not be able to download it again
 - user is able to process multiple files at the same time and listen for each one.

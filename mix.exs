@@ -39,7 +39,8 @@ defmodule OtpCsvParser.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:absinthe, "~> 1.4.0"},
       {:absinthe_plug, "~> 1.4"},
-      {:absinthe_phoenix, "~> 1.4"}
+      {:absinthe_phoenix, "~> 1.4"},
+      {:ex_machina, "~> 2.4"}
     ]
   end
 

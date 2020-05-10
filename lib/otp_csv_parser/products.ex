@@ -7,6 +7,7 @@ defmodule OtpCsvParser.Products do
   alias OtpCsvParser.Repo
 
   alias OtpCsvParser.Products.Product
+  alias OtpCsvParser.ProductCategory
 
   @doc """
   Returns the list of products.
@@ -100,5 +101,12 @@ defmodule OtpCsvParser.Products do
   """
   def change_product(%Product{} = product) do
     Product.changeset(product, %{})
+  end
+
+  def add_category(attrs \\ %{}) do
+    %ProductCategory{}
+    |> ProductCategory.changeset(attrs)
+    |> Repo.insert()
+    # |> Repo.insert(on_conflict: :nothing)
   end
 end

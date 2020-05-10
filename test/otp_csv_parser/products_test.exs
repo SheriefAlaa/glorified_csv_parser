@@ -6,9 +6,30 @@ defmodule OtpCsvParser.ProductsTest do
   describe "products" do
     alias OtpCsvParser.Products.Product
 
-    @valid_attrs %{description_ar: "some description_ar", description_en: "some description_en", listed: true, price: "120.5"}
-    @update_attrs %{description_ar: "some updated description_ar", description_en: "some updated description_en", listed: false, price: "456.7"}
-    @invalid_attrs %{description_ar: nil, description_en: nil, listed: nil, price: nil}
+    @valid_attrs %{
+      name_en: "Furniture",
+      name_ar: "اثاث",
+      description_ar: "some description_ar",
+      description_en: "some description_en",
+      listed: true,
+      price: "120.5"
+    }
+    @update_attrs %{
+      name_en: "Furniture",
+      name_ar: "اثاث",
+      description_ar: "some updated description_ar",
+      description_en: "some updated description_en",
+      listed: false,
+      price: "456.7"
+    }
+    @invalid_attrs %{
+      name_en: nil,
+      name_ar: nil,
+      description_ar: nil,
+      description_en: nil,
+      listed: nil,
+      price: nil
+    }
 
     def product_fixture(attrs \\ %{}) do
       {:ok, product} =

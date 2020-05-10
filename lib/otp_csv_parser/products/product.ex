@@ -2,6 +2,8 @@ defmodule OtpCsvParser.Products.Product do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias OtpCsvParser.Categories.Category
+
   schema "products" do
     # Inherited fields from categories table.
     field :name_ar, :string
@@ -12,6 +14,8 @@ defmodule OtpCsvParser.Products.Product do
     field :description_en, :string
     field :listed, :boolean, default: true
     field :price, :decimal
+
+    many_to_many(:categories, Category, join_through: "product_categories")
 
     timestamps()
   end
