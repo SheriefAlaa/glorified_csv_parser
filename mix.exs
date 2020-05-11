@@ -40,7 +40,11 @@ defmodule OtpCsvParser.MixProject do
       {:absinthe, "~> 1.4.0"},
       {:absinthe_plug, "~> 1.4"},
       {:absinthe_phoenix, "~> 1.4"},
-      {:ex_machina, "~> 2.4"}
+      {:ex_machina, "~> 2.4"},
+      {:decimal, "~> 1.0"},
+      {:cachex, "~> 3.2"},
+      {:csv, "~> 2.3"},
+      {:timex, "~> 3.5"}
     ]
   end
 

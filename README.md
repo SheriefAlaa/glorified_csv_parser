@@ -25,7 +25,7 @@
 
 ### Genserver that process a csv file
 
-- Creates a new DB record if it was a new.
+- Creates a new DB record if it was a new. D
 - Updated a previous one
 - Validates uniqueness of name D
 - Validates required information
@@ -37,14 +37,17 @@
 
 ### User Expectation
 
-- User should run a GraphQL mutation that generates a process identifier
-- User should send the CSV file using post request using the generated identifier
-- User subscribes to GraphQL subscription for parsing progress (number of failures, number of success, and remaining rows).
-- User can fetch the failure records using graphql (with failure reason).
+- User should run a GraphQL mutation that generates a process identifier D
+- User should send the CSV file using post request using the generated identifier D
+- User subscribes to GraphQL subscription for parsing progress (number of failures, number of success, and remaining rows). D
+- User can fetch the failure records using graphql (with failure reason). D
 
 ### System Behaviour
 
-- User can access the process information for a 1 hour after the process is finished
-- After 1 hour all data should be removed
-- After downloading the failure result, the user should not be able to download it again
-- user is able to process multiple files at the same time and listen for each one.
+- User can access the process information for a 1 hour after the process is finished D
+- After 1 hour all data should be removed D
+- After downloading the failure result, the user should not be able to download it again D
+- user is able to process multiple files at the same time and listen for each one. D 
+
+## Remark:
+  It's best to generate a process ID for each file. Because each process is responsible for a single file, otherwise, all results will be teated as a single file)

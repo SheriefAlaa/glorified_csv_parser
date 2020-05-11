@@ -20,6 +20,21 @@ defmodule OtpCsvParser.Products.Product do
     timestamps()
   end
 
+  def from_csv(data) when is_map(data) do
+    %{
+      name_ar: data["name_ar"],
+      name_en: data["name_en"],
+      description_ar: data["description_ar"],
+      description_en: data["description_en"],
+      listed: str_to_bool(data["listed"]),
+      price: Decimal.new(data["price"])
+    }
+  end
+
+  defp str_to_bool("TRUE"), do: true
+  defp str_to_bool("FALSE"), do: false
+  defp str_to_bool(_), do: true
+
   @doc false
   def changeset(product, attrs) do
     product

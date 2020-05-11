@@ -13,6 +13,7 @@ defmodule OtpCsvParser.Application do
       # Start the endpoint when the application starts
       OtpCsvParserWeb.Endpoint,
       {Absinthe.Subscription, [OtpCsvParserWeb.Endpoint]},
+      {Cachex, :processes},
     ]
 
     opts = [strategy: :one_for_one, name: OtpCsvParser.Supervisor]

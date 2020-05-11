@@ -56,6 +56,8 @@ defmodule OtpCsvParser.Products do
     |> Repo.insert()
   end
 
+  # TODO: Create or update
+
   @doc """
   Updates a product.
 

@@ -1,4 +1,4 @@
-defmodule OmegaBravera.ProductCategoryTest do
+defmodule OtpCsvParser.ProductCategoryTest do
   use OtpCsvParser.DataCase
 
   import OtpCsvParser.Factory

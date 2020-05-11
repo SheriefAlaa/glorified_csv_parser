@@ -10,6 +10,7 @@ defmodule OtpCsvParserWeb.Router do
   end
 
   pipeline :api do
+    plug Plug.Logger
     plug :accepts, ["json"]
   end
 
@@ -19,17 +20,14 @@ defmodule OtpCsvParserWeb.Router do
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", OtpCsvParserWeb do
-  #   pipe_through :api
-  # end
-
   scope "/" do
     pipe_through :api
 
+    forward "/api", Absinthe.Plug, schema: OtpCsvParserWeb.Api.Schema
+
     forward "/graphiql", Absinthe.Plug.GraphiQL,
       schema: OtpCsvParserWeb.Api.Schema,
-      interface: :simple,
+      socket: OtpCsvParserWeb.UserSocket,
       context: %{pubsub: OtpCsvParserWeb.Endpoint}
   end
 end
